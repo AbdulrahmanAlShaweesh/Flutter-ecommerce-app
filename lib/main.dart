@@ -1,6 +1,8 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:flutter_ecommerce_app/Screens/login_Screen.dart';
+import 'package:flutter_ecommerce_app/Screens/register_screen.dart';
 
 void main() {
   runApp(
@@ -13,6 +15,13 @@ class EcommerceApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      routes: {
+        RegisterScreen.id: (context) => RegisterScreen(),
+        LoginScreen.id: (context) => LoginScreen(),
+      },
+      home: RegisterScreen(),
+    );
   }
 }
