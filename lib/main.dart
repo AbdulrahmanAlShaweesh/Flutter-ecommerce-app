@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, unused_import
 
 import 'package:flutter/material.dart';
+import 'package:flutter_ecommerce_app/Screens/home_screen.dart';
 import 'package:flutter_ecommerce_app/Screens/login_Screen.dart';
 import 'package:flutter_ecommerce_app/Screens/register_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -26,6 +27,7 @@ class EcommerceApp extends StatelessWidget {
       routes: {
         RegisterScreen.id: (context) => RegisterScreen(),
         LoginScreen.id: (context) => LoginScreen(),
+        ProductsHomeScreen.id: (context) => ProductsHomeScreen()
       },
       home: RegisterScreen(),
     );

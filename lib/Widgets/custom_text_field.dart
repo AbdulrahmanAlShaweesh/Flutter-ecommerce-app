@@ -11,6 +11,7 @@ class CustomTextFromFieldWidget extends StatelessWidget {
     this.visbleIcon,
     required this.obscureText,
     required this.validate,
+    required this.controller,
   });
 
   IconData icons;
@@ -19,6 +20,7 @@ class CustomTextFromFieldWidget extends StatelessWidget {
   IconData? visbleIcon;
   bool obscureText;
   String? Function(String?)? validate;
+  TextEditingController controller;
 
   @override
   Widget build(BuildContext context) {
@@ -35,6 +37,7 @@ class CustomTextFromFieldWidget extends StatelessWidget {
         ),
         Expanded(
           child: TextFormField(
+            controller: controller,
             validator: validate,
             obscureText: obscureText,
             style: TextStyle(

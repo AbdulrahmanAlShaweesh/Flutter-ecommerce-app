@@ -29,6 +29,13 @@
             {
               "client_id": "539932454843-te6o7kjn6cikeg0j83mc4st8geplg52g.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "539932454843-e07neu80mjdja3pofckvra0os9av7m57.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.flutterEcommerceApp.RunnerTests"
+              }
             }
           ]
         }
