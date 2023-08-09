@@ -1,6 +1,7 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, deprecated_member_use
 
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class CustomBottomNavigationBar extends StatefulWidget {
   const CustomBottomNavigationBar({super.key});
@@ -12,49 +13,26 @@ class CustomBottomNavigationBar extends StatefulWidget {
 
 class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
   List icons = [
-    Icons.home,
-    Icons.search,
+    'assets/navigationbaricons/home.svg',
+    'assets/navigationbaricons/category.svg',
+    'assets/navigationbaricons/chat.svg',
+    'assets/navigationbaricons/shopping-cart.svg',
+    'assets/navigationbaricons/person.svg',
   ];
-  List<String> iconName = [
-    'Home',
-    'Search',
-  ];
-
-  Widget createIcon({required icon, name}) {
-    return Padding(
-      padding: const EdgeInsets.only(
-        left: 15.0,
-        right: 15.0,
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Icon(
-            icon,
-            color: Colors.white,
-          ),
-          SizedBox(
-            height: 1.0,
-          ),
-          Text(
-            name,
-            style: TextStyle(
-              fontSize: 10.0,
-              color: Colors.white,
-            ),
-          )
-        ],
-      ),
-    );
-  }
+  List<String> iconName = ['Home', 'Category', 'Chat', 'Cart', 'profile'];
+  int selectedIndex = 0;
 
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Container(
-        alignment: Alignment.center,
-        height: 50,
+        padding: EdgeInsets.only(
+          top: 10,
+          bottom: 10.0,
+          right: 15.0,
+          left: 10.0,
+        ),
+        height: 63,
         margin: EdgeInsets.symmetric(
           horizontal: 15.0,
           vertical: 10,
@@ -63,19 +41,52 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
           color: Colors.black.withOpacity(0.6),
           borderRadius: BorderRadius.circular(20.0),
         ),
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: List.generate(
-            iconName.length,
-            (index) {
-              return createIcon(
-                icon: icons[index],
-                name: iconName[index],
+        child: ListView.builder(
+            scrollDirection: Axis.horizontal,
+            itemCount: iconName.length,
+            itemBuilder: (context, index) {
+              return GestureDetector(
+                onTap: () {
+                  setState(() {
+                    selectedIndex = index;
+                  });
+                },
+                child: Padding(
+                  padding: const EdgeInsets.only(
+                    left: 18.0,
+                    right: 10.0,
+                  ),
+                  child: Column(
+                    children: [
+                      SvgPicture.asset(
+                        icons[index],
+                        color:
+                            selectedIndex == index ? Colors.white : Colors.grey,
+                        width: iconName[index] == 'Cart' ? 25.0 : 20.0,
+                        height: iconName[index] == 'Cart' ||
+                                iconName[index] == 'profile'
+                            ? 25.0
+                            : 20.0,
+                      ),
+                      SizedBox(
+                        height: 4.0,
+                      ),
+                      Text(
+                        iconName[index],
+                        style: TextStyle(
+                          fontSize: 11.0,
+                          color: selectedIndex == index
+                              ? Colors.white
+                              : Colors.grey,
+                          fontWeight: FontWeight.w700,
+                          letterSpacing: 0.6,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
               );
-            },
-          ),
-        ),
+            }),
       ),
     );
   }
