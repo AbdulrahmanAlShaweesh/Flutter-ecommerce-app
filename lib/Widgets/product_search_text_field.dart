@@ -8,10 +8,10 @@ class SearchProductTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: 5.0, vertical: 20),
-      height: 80,
+      margin: EdgeInsets.symmetric(horizontal: 5.0, vertical: 10),
+      height: 70,
       width: double.infinity,
-      // color: Colors.red,
+      // color: Colors.green,
       child: Row(
         children: [
           Expanded(
