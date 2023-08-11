@@ -120,7 +120,9 @@ class _CustomDrawerState extends State<CustomDrawer> {
                               // fontWeight: FontWeight.w700,
                               color: selectedIndex == index
                                   ? Colors.black
-                                  : Colors.black.withOpacity(0.6),
+                                  : Colors.grey,
+                              fontFamily: 'Roboto_Mono',
+                              fontWeight: FontWeight.w600,
                             ),
                           ),
                         ],

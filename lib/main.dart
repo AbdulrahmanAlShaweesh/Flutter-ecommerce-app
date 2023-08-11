@@ -2,7 +2,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_ecommerce_app/Constants/colors.dart';
-import 'package:flutter_ecommerce_app/Features/Cubits/cubit/app_auth_cubit.dart';
+import 'package:flutter_ecommerce_app/Features/cubit/app_auth_cubit.dart';
+import 'package:flutter_ecommerce_app/Features/cubit/login_hidden_password_cubit.dart';
 import 'package:flutter_ecommerce_app/Views/home_screen.dart';
 import 'package:flutter_ecommerce_app/Views/login_Screen.dart';
 import 'package:flutter_ecommerce_app/Views/register_screen.dart';
@@ -29,6 +30,9 @@ class EcommerceApp extends StatelessWidget {
       providers: [
         BlocProvider(
           create: (context) => AppAuthCubit(),
+        ),
+        BlocProvider(
+          create: (context) => LoginHiddenPasswordCubit(),
         ),
       ],
       child: MaterialApp(

@@ -3,7 +3,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_ecommerce_app/Constants/colors.dart';
-import 'package:flutter_ecommerce_app/Features/Cubits/cubit/app_auth_cubit.dart';
+import 'package:flutter_ecommerce_app/Features/cubit/app_auth_cubit.dart';
+import 'package:flutter_ecommerce_app/Features/cubit/login_hidden_password_cubit.dart';
 import 'package:flutter_ecommerce_app/Views/Widgets/snap_bar_error.dart';
 import 'package:flutter_ecommerce_app/Views/login_Screen.dart';
 import 'package:flutter_ecommerce_app/Views/Widgets/custom_button.dart';
@@ -14,7 +15,6 @@ import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 
 class RegisterScreen extends StatelessWidget {
   static String id = 'register sreen';
-  bool isShowPassword = false;
   GlobalKey<FormState> formKey = GlobalKey();
 
   TextEditingController usernameController = TextEditingController();
@@ -120,23 +120,38 @@ class RegisterScreen extends StatelessWidget {
                               SizedBox(
                                 height: 20.0,
                               ),
-                              CustomTextFromFieldWidget(
-                                controller: passwordController,
-                                validate: (data) {
-                                  if (data!.isEmpty) {
-                                    return 'enter your password';
-                                  } else if (data.length < 8) {
-                                    return 'Password is too short';
-                                  }
-                                  return null;
+                              BlocConsumer<LoginHiddenPasswordCubit,
+                                  HintPassword>(
+                                listener: (context, state) {},
+                                builder: (context, state) {
+                                  var isShowPassword =
+                                      BlocProvider.of<LoginHiddenPasswordCubit>(
+                                          context);
+                                  return CustomTextFromFieldWidget(
+                                    controller: passwordController,
+                                    validate: (data) {
+                                      if (data!.isEmpty) {
+                                        return 'enter your password';
+                                      } else if (data.length < 8) {
+                                        return 'Password is too short';
+                                      }
+                                      return null;
+                                    },
+                                    obscureText:
+                                        isShowPassword.isShowRegisterPassword,
+                                    onPressed: () {
+                                      isShowPassword.showPassword(
+                                        screenName: 'register',
+                                      );
+                                    },
+                                    visbleIcon:
+                                        isShowPassword.isShowRegisterPassword
+                                            ? Icons.visibility_off
+                                            : Icons.visibility,
+                                    icons: Icons.lock_outline,
+                                    hintText: 'Password',
+                                  );
                                 },
-                                obscureText: isShowPassword,
-                                onPressed: () {},
-                                visbleIcon: isShowPassword
-                                    ? Icons.visibility_off
-                                    : Icons.visibility,
-                                icons: Icons.lock_outline,
-                                hintText: 'Password',
                               ),
                               SizedBox(
                                 height: 15.0,

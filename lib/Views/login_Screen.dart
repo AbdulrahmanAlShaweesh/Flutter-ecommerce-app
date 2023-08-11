@@ -3,7 +3,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_ecommerce_app/Constants/colors.dart';
-import 'package:flutter_ecommerce_app/Features/Cubits/cubit/app_auth_cubit.dart';
+import 'package:flutter_ecommerce_app/Features/cubit/app_auth_cubit.dart';
+import 'package:flutter_ecommerce_app/Features/cubit/login_hidden_password_cubit.dart';
 import 'package:flutter_ecommerce_app/Views/Widgets/custom_button.dart';
 import 'package:flutter_ecommerce_app/Views/Widgets/custom_horizontal_line.dart';
 import 'package:flutter_ecommerce_app/Views/Widgets/custom_media_icons_widget.dart';
@@ -99,25 +100,36 @@ class LoginScreen extends StatelessWidget {
                               SizedBox(
                                 height: 20.0,
                               ),
-                              CustomTextFromFieldWidget(
-                                controller: passwordController,
-                                validate: (data) {
-                                  if (data!.isEmpty) {
-                                    return 'Field is required';
-                                  } else if (data.length < 8) {
-                                    return 'Passowrd is too short';
-                                  }
-                                  return null;
+                              BlocConsumer<LoginHiddenPasswordCubit,
+                                  HintPassword>(
+                                listener: (context, state) {},
+                                builder: (context, state) {
+                                  var showPassword =
+                                      BlocProvider.of<LoginHiddenPasswordCubit>(
+                                          context);
+                                  return CustomTextFromFieldWidget(
+                                    controller: passwordController,
+                                    validate: (data) {
+                                      if (data!.isEmpty) {
+                                        return 'Field is required';
+                                      } else if (data.length < 8) {
+                                        return 'Passowrd is too short';
+                                      }
+                                      return null;
+                                    },
+                                    obscureText:
+                                        showPassword.isShowLoginPassword,
+                                    visbleIcon: showPassword.isShowLoginPassword
+                                        ? Icons.visibility_off
+                                        : Icons.visibility,
+                                    onPressed: () {
+                                      showPassword.showPassword(
+                                          screenName: 'Login');
+                                    },
+                                    icons: Icons.lock_outline,
+                                    hintText: 'Password',
+                                  );
                                 },
-                                obscureText: isShowPassword,
-                                visbleIcon: isShowPassword
-                                    ? Icons.visibility_off
-                                    : Icons.visibility,
-                                onPressed: () {
-                                  isShowPassword = !isShowPassword;
-                                },
-                                icons: Icons.lock_outline,
-                                hintText: 'Password',
                               ),
                               SizedBox(
                                 height: 22.0,
