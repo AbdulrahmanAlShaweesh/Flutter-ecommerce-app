@@ -2,9 +2,9 @@
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_ecommerce_app/Screens/home_screen.dart';
-import 'package:flutter_ecommerce_app/Screens/login_Screen.dart';
-import 'package:flutter_ecommerce_app/Widgets/snap_bar_error.dart';
+import 'package:flutter_ecommerce_app/Views/home_screen.dart';
+import 'package:flutter_ecommerce_app/Views/login_Screen.dart';
+import 'package:flutter_ecommerce_app/Views/Widgets/snap_bar_error.dart';
 
 class Auths {
   static Future<User?> signUpAccount(
@@ -68,7 +68,7 @@ class Auths {
   }
 
   // logout or exit the account.
-  Future<void> exitApp() async {
+  static Future<void> exitApp() async {
     await FirebaseAuth.instance
         .signOut()
         .then(

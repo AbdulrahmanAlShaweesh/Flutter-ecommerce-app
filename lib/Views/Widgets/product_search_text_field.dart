@@ -24,21 +24,21 @@ class SearchProductTextField extends StatelessWidget {
                 ),
                 border: OutlineInputBorder(
                   borderSide: BorderSide.none,
-                  borderRadius: BorderRadius.circular(15.0),
+                  borderRadius: BorderRadius.circular(10.0),
                 ),
                 focusedBorder: OutlineInputBorder(
                   borderSide: BorderSide.none,
-                  borderRadius: BorderRadius.circular(15.0),
+                  borderRadius: BorderRadius.circular(10.0),
                 ),
                 enabledBorder: OutlineInputBorder(
                   borderSide: BorderSide.none,
-                  borderRadius: BorderRadius.circular(15.0),
+                  borderRadius: BorderRadius.circular(10.0),
                 ),
-                fillColor: Color(0xFFf3f3f5),
+                fillColor: Color.fromARGB(255, 220, 223, 225),
                 filled: true,
                 contentPadding: EdgeInsets.symmetric(
-                  // horizontal: 5.0,
-                  vertical: 15.0,
+                  horizontal: 0.0,
+                  vertical: 0.0,
                 ),
                 prefixIcon: Icon(
                   Icons.search,
@@ -52,7 +52,7 @@ class SearchProductTextField extends StatelessWidget {
             height: 60,
             width: 70,
             decoration: BoxDecoration(
-              color: Color(0xFFf3f3f5),
+              color: Color.fromARGB(255, 220, 223, 225),
               shape: BoxShape.circle,
             ),
             child: Icon(
@@ -66,7 +66,7 @@ class SearchProductTextField extends StatelessWidget {
             height: 60,
             width: 70,
             decoration: BoxDecoration(
-              color: Color(0xFFf3f3f5),
+              color: Color.fromARGB(255, 220, 223, 225),
               shape: BoxShape.circle,
             ),
             child: Icon(

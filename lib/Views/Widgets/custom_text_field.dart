@@ -53,7 +53,9 @@ class CustomTextFromFieldWidget extends StatelessWidget {
                 ),
               ),
               hintStyle: TextStyle(
-                  fontSize: 16.0, color: Colors.grey.withOpacity(0.9)),
+                fontSize: 16.0,
+                color: Colors.grey.withOpacity(0.9),
+              ),
               hintText: hintText,
               contentPadding:
                   EdgeInsets.symmetric(horizontal: 30.0, vertical: 13),

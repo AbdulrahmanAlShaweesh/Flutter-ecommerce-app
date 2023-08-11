@@ -1,11 +1,11 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, deprecated_member_use
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, deprecated_member_use, must_be_immutable
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class CustomBottomNavigationBar extends StatefulWidget {
-  const CustomBottomNavigationBar({super.key});
-
+  CustomBottomNavigationBar({super.key, required this.scaffoldKey});
+  GlobalKey<ScaffoldState> scaffoldKey;
   @override
   State<CustomBottomNavigationBar> createState() =>
       _CustomBottomNavigationBarState();
@@ -33,9 +33,11 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
           left: 10.0,
         ),
         height: 63,
-        margin: EdgeInsets.symmetric(
-          horizontal: 15.0,
-          vertical: 10,
+        margin: EdgeInsets.only(
+          left: 15.0,
+          right: 20,
+          top: 5.0,
+          bottom: 5.0,
         ),
         decoration: BoxDecoration(
           color: Colors.black.withOpacity(0.6),
@@ -50,6 +52,10 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
                   setState(() {
                     selectedIndex = index;
                   });
+
+                  if (iconName[selectedIndex] == 'profile') {
+                    widget.scaffoldKey.currentState!.openDrawer();
+                  }
                 },
                 child: Padding(
                   padding: const EdgeInsets.only(
