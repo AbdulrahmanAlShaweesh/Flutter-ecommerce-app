@@ -4,6 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_ecommerce_app/Constants/colors.dart';
 import 'package:flutter_ecommerce_app/Features/cubit/app_auth_cubit.dart';
 import 'package:flutter_ecommerce_app/Features/cubit/login_hidden_password_cubit.dart';
+import 'package:flutter_ecommerce_app/Views/cart_screen.dart';
+import 'package:flutter_ecommerce_app/Views/catigories_screen.dart';
+import 'package:flutter_ecommerce_app/Views/chat_screen.dart';
 import 'package:flutter_ecommerce_app/Views/home_screen.dart';
 import 'package:flutter_ecommerce_app/Views/login_Screen.dart';
 import 'package:flutter_ecommerce_app/Views/register_screen.dart';
@@ -44,7 +47,10 @@ class EcommerceApp extends StatelessWidget {
         routes: {
           RegisterScreen.id: (context) => RegisterScreen(),
           LoginScreen.id: (context) => LoginScreen(),
-          ProductsHomeScreen.id: (context) => ProductsHomeScreen()
+          ProductsHomeScreen.id: (context) => ProductsHomeScreen(),
+          ChatScreen.id: (context) => ChatScreen(),
+          CatigoriesScreen.id: (context) => CatigoriesScreen(),
+          CartScreen.id: (context) => CartScreen(),
         },
         home: RegisterScreen(),
       ),

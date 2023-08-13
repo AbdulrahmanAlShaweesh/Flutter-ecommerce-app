@@ -31,9 +31,11 @@ class LoginScreen extends StatelessWidget {
           isLoading = true;
         } else if (state is LoginSucessState) {
           Navigator.pushNamed(context, ProductsHomeScreen.id);
+          isLoading = false;
         } else if (state is LoginErrorState) {
           showSnakBarErrorMeggase(
               context: context, errorMessage: state.errorMessage);
+          isLoading = false;
         }
       },
       builder: (context, state) => SafeArea(

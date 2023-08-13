@@ -20,6 +20,7 @@ class CustomCatigoriesWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      // padding: EdgeInsets.all(20.0),
       alignment: Alignment.center,
       margin: EdgeInsets.only(
         left: 10,
@@ -34,6 +35,7 @@ class CustomCatigoriesWidget extends StatelessWidget {
         itemBuilder: (context, index) {
           return Center(
             child: Container(
+              padding: EdgeInsets.all(10.0),
               alignment: Alignment.center,
               margin: EdgeInsets.all(
                 0.0,

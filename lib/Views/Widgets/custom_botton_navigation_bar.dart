@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, deprecated_member_use, must_be_immutable
 
 import 'package:flutter/material.dart';
+import 'package:flutter_ecommerce_app/Views/catigories_screen.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class CustomBottomNavigationBar extends StatefulWidget {
