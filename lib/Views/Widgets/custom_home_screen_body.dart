@@ -7,7 +7,6 @@ import 'package:flutter_ecommerce_app/Views/Widgets/special_offers_widget.dart';
 
 class CusstomHomeScreenBody extends StatelessWidget {
   const CusstomHomeScreenBody({super.key});
-  // int selectedIndex = 0;
   @override
   Widget build(BuildContext context) {
     return ListView(
