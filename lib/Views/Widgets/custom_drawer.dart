@@ -4,7 +4,7 @@ import 'dart:ui';
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_ecommerce_app/Views/login_Screen.dart';
+import 'package:flutter_ecommerce_app/Views/auth_view/login_Screen.dart';
 import 'package:flutter_ecommerce_app/Services/app_auth_services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 

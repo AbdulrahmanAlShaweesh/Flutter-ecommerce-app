@@ -4,12 +4,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_ecommerce_app/Constants/colors.dart';
 import 'package:flutter_ecommerce_app/Features/cubit/app_auth_cubit.dart';
 import 'package:flutter_ecommerce_app/Features/cubit/login_hidden_password_cubit.dart';
-import 'package:flutter_ecommerce_app/Views/cart_screen.dart';
-import 'package:flutter_ecommerce_app/Views/catigories_screen.dart';
-import 'package:flutter_ecommerce_app/Views/chat_screen.dart';
-import 'package:flutter_ecommerce_app/Views/home_screen.dart';
-import 'package:flutter_ecommerce_app/Views/login_Screen.dart';
-import 'package:flutter_ecommerce_app/Views/register_screen.dart';
+import 'package:flutter_ecommerce_app/Views/Widgets/custom_botton_navigation_bar.dart';
+import 'package:flutter_ecommerce_app/Views/cart_view/cart_screen.dart';
+import 'package:flutter_ecommerce_app/Views/catigories_view/catigories_screen.dart';
+import 'package:flutter_ecommerce_app/Views/chat_view/chat_screen.dart';
+import 'package:flutter_ecommerce_app/Views/home_view/home_screen.dart';
+import 'package:flutter_ecommerce_app/Views/auth_view/login_Screen.dart';
+import 'package:flutter_ecommerce_app/Views/auth_view/register_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -40,8 +41,8 @@ class EcommerceApp extends StatelessWidget {
       ],
       child: MaterialApp(
         theme: ThemeData(
-          // brightness: Brightness.dark,
-          scaffoldBackgroundColor: Colors.red,
+          brightness: Brightness.light,
+          // scaffoldBackgroundColor: Colors.none,
         ),
         debugShowCheckedModeBanner: false,
         routes: {
@@ -51,6 +52,8 @@ class EcommerceApp extends StatelessWidget {
           ChatScreen.id: (context) => ChatScreen(),
           CatigoriesScreen.id: (context) => CatigoriesScreen(),
           CartScreen.id: (context) => CartScreen(),
+          CustomBottomNavigationBar.id: (context) =>
+              CustomBottomNavigationBar(),
         },
         home: RegisterScreen(),
       ),

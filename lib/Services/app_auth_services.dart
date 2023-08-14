@@ -2,8 +2,8 @@
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_ecommerce_app/Views/home_screen.dart';
-import 'package:flutter_ecommerce_app/Views/login_Screen.dart';
+import 'package:flutter_ecommerce_app/Views/home_view/home_screen.dart';
+import 'package:flutter_ecommerce_app/Views/auth_view/login_Screen.dart';
 import 'package:flutter_ecommerce_app/Views/Widgets/snap_bar_error.dart';
 
 class Auths {
