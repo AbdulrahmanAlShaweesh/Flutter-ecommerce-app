@@ -1,7 +1,8 @@
 // ignore_for_file: prefer_const_constructors, unused_import
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_ecommerce_app/Views/wecome_screen.dart';
+import 'package:flutter_ecommerce_app/Views/home_screen.dart';
+import 'package:flutter_ecommerce_app/Views/intro_slider_screen.dart';
 import 'firebase_options.dart';
 
 void main() async {
@@ -26,9 +27,10 @@ class EcommerceApp extends StatelessWidget {
       ),
       debugShowCheckedModeBanner: false,
       routes: {
-        WelcomeScreen.id: (context) => WelcomeScreen(),
+        IntroSliderScreen.id: (context) => IntroSliderScreen(),
+        HomeScreen.id: (context) => HomeScreen(),
       },
-      initialRoute: WelcomeScreen.id,
+      initialRoute: IntroSliderScreen.id,
     );
   }
 }
