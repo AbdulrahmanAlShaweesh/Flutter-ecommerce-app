@@ -24,7 +24,7 @@ class SliderControlWidget extends StatelessWidget {
         // skip
         GestureDetector(
           onTap: () {
-            _controller.jumpToPage(screens.length);
+            _controller.jumpToPage(screens.length - 1);
           },
           child: const SliderSkipText(),
         ),

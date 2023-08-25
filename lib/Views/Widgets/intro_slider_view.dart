@@ -33,7 +33,6 @@ class _IntroSliderViewState extends State<IntroSliderView> {
             setState(() {
               onLastPage = (index == screens.length - 1);
             });
-            log('$onLastPage');
           },
           controller: _controller,
           itemCount: screens.length,

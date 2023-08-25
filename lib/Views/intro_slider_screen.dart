@@ -6,9 +6,9 @@ class IntroSliderScreen extends StatelessWidget {
   static String id = 'Intro Slider Screen';
   @override
   Widget build(BuildContext context) {
-    return const SafeArea(
-      child: Scaffold(
-        body: IntroSliderView(),
+    return const Scaffold(
+      body: SafeArea(
+        child: IntroSliderView(),
       ),
     );
   }

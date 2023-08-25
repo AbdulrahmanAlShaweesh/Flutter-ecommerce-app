@@ -11,7 +11,6 @@ class SliderNextText extends StatelessWidget {
       'Next',
       style: TextStyle(
         fontSize: 16.0,
-        color: Colors.black,
         fontWeight: FontWeight.bold,
         letterSpacing: 0.9,
       ),

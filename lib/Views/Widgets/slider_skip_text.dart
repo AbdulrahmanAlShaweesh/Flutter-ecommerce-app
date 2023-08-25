@@ -11,7 +11,6 @@ class SliderSkipText extends StatelessWidget {
       'Skip',
       style: TextStyle(
         fontSize: 16.0,
-        color: Colors.black,
         fontWeight: FontWeight.bold,
         letterSpacing: 0.9,
       ),

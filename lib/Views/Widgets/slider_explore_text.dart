@@ -10,7 +10,6 @@ class SliderExploreText extends StatelessWidget {
     return const Text(
       'Explore',
       style: TextStyle(
-        color: Colors.black,
         letterSpacing: 0.9,
         fontWeight: FontWeight.bold,
         fontSize: 16.0,
