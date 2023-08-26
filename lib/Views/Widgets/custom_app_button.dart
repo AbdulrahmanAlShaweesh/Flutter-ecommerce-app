@@ -22,6 +22,7 @@ class CustomAppButton extends StatelessWidget {
         text: buttonText,
         fontSize: 18.0,
         fontWeight: FontWeight.bold,
+        color: Colors.white,
       ),
     );
   }

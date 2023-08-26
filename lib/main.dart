@@ -24,7 +24,6 @@ class EcommerceApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(
         brightness: Brightness.dark,
-        // scaffoldBackgroundColor: Colors.none,
       ),
       debugShowCheckedModeBanner: false,
       routes: {

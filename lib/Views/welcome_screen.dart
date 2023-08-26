@@ -48,7 +48,10 @@ class WelcomeScreen extends StatelessWidget {
             SizedBox(
               height: 10.0,
             ),
-            CustomIsHasAccount()
+            CustomIsHasAccount(
+              text1: 'Already have an account? ',
+              text2: 'Login',
+            )
           ],
         ),
       ),
