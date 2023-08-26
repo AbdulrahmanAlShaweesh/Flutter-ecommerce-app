@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_ecommerce_app/Views/Widgets/slider_explore_text.dart';
 import 'package:flutter_ecommerce_app/Views/Widgets/slider_next_text.dart';
 import 'package:flutter_ecommerce_app/Views/Widgets/slider_skip_text.dart';
-import 'package:flutter_ecommerce_app/Views/home_screen.dart';
+import 'package:flutter_ecommerce_app/Views/welcome_screen.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class SliderControlWidget extends StatelessWidget {
@@ -35,7 +35,7 @@ class SliderControlWidget extends StatelessWidget {
         onLastPage
             ? GestureDetector(
                 onTap: () {
-                  Navigator.pushNamed(context, HomeScreen.id);
+                  Navigator.pushNamed(context, WelcomeScreen.id);
                 },
                 child: const SliderExploreText(),
               )

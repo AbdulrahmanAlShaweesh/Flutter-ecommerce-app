@@ -5,9 +5,13 @@ class SmallText extends StatelessWidget {
     super.key,
     required this.text,
     required this.fontSize,
+    this.fontWeight,
+    this.color,
   });
   final String text;
   final double fontSize;
+  final FontWeight? fontWeight;
+  final Color? color;
   // final
   @override
   Widget build(BuildContext context) {
@@ -18,6 +22,8 @@ class SmallText extends StatelessWidget {
         // fontWeight: FontWeight.bold,
         letterSpacing: 0.9,
         height: 1.5,
+        fontWeight: fontWeight,
+        color: color,
       ),
     );
   }
