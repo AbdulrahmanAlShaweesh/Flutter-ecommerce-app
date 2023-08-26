@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ecommerce_app/Views/Widgets/small_text.dart';
 
 class IntroPage2 extends StatelessWidget {
   const IntroPage2({super.key});
@@ -6,15 +7,51 @@ class IntroPage2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        width: double.infinity,
-        height: double.infinity,
-        color: Colors.green,
-        child: const Center(
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Container(
+            height: 200,
+            width: double.infinity,
+            decoration: const BoxDecoration(
+              // color: Colors.amber,
+              image: DecorationImage(
+                fit: BoxFit.contain,
+                image: AssetImage('assets/IntroSliderImages/TrackOrder.png'),
+              ),
+            ),
+          ),
+          const Padding(
+            padding: EdgeInsets.only(
+              top: 30.0,
+              bottom: 10.0,
+            ),
             child: Text(
-          'Page 2',
-          style: TextStyle(color: Colors.black),
-        )),
+              'Track Your Order',
+              style: TextStyle(
+                fontSize: 30,
+                fontWeight: FontWeight.bold,
+                letterSpacing: 0.9,
+              ),
+            ),
+          ),
+          const Column(
+            children: [
+              SmallText(
+                text: 'You can order and track your purches',
+                fontSize: 16.0,
+              ),
+              SmallText(
+                text: 'at any time from any where, provide',
+                fontSize: 16.0,
+              ),
+              SmallText(
+                text: 'your location ',
+                fontSize: 16.0,
+              ),
+            ],
+          ),
+        ],
       ),
     );
   }

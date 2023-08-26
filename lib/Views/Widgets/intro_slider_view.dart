@@ -1,7 +1,5 @@
 // ignore_for_file: prefer_final_fields
 
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_ecommerce_app/Views/Widgets/intro_slider_contrller.dart';
 import 'package:flutter_ecommerce_app/Views/intro_page1.dart';
