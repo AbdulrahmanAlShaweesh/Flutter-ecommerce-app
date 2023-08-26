@@ -1,9 +1,11 @@
 // ignore_for_file: prefer_const_constructors, unused_import
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_ecommerce_app/Views/login_screen.dart';
-import 'package:flutter_ecommerce_app/Views/welcome_screen.dart';
-import 'package:flutter_ecommerce_app/Views/intro_slider_screen.dart';
+import 'package:flutter_ecommerce_app/Views/Screens/intro_slider_screen.dart';
+import 'package:flutter_ecommerce_app/Views/Screens/login_screen.dart';
+import 'package:flutter_ecommerce_app/Views/Screens/signuo_screen.dart';
+import 'package:flutter_ecommerce_app/Views/Screens/welcome_screen.dart';
+
 import 'firebase_options.dart';
 
 void main() async {
@@ -30,6 +32,7 @@ class EcommerceApp extends StatelessWidget {
         IntroSliderScreen.id: (context) => IntroSliderScreen(),
         WelcomeScreen.id: (context) => WelcomeScreen(),
         LoginScreen.id: (context) => LoginScreen(),
+        SignUpScreen.id: (context) => SignUpScreen(),
       },
       initialRoute: IntroSliderScreen.id,
     );

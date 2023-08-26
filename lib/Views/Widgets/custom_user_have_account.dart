@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ecommerce_app/Views/Widgets/small_text.dart';
-import 'package:flutter_ecommerce_app/Views/login_screen.dart';
 import 'package:flutter_ecommerce_app/constant/app_colors.dart';
 
 class CustomIsHasAccount extends StatelessWidget {
@@ -8,11 +7,12 @@ class CustomIsHasAccount extends StatelessWidget {
     super.key,
     required this.text1,
     required this.text2,
+    required this.screenName,
   });
 
   final String text1;
   final String text2;
-
+  final String screenName;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -21,7 +21,7 @@ class CustomIsHasAccount extends StatelessWidget {
         SmallText(text: text1, fontSize: 16.0),
         GestureDetector(
           onTap: () {
-            Navigator.pushReplacementNamed(context, LoginScreen.id);
+            Navigator.pushReplacementNamed(context, screenName);
           },
           child: SmallText(
             text: text2,

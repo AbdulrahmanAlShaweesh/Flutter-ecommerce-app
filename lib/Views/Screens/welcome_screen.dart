@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ecommerce_app/Views/Screens/login_screen.dart';
 import 'package:flutter_ecommerce_app/Views/Widgets/custom_app_button.dart';
 import 'package:flutter_ecommerce_app/Views/Widgets/custom_slider_image.dart';
 import 'package:flutter_ecommerce_app/Views/Widgets/custom_slider_screens_title.dart';
@@ -10,24 +11,24 @@ class WelcomeScreen extends StatelessWidget {
   static String id = 'welcome screen';
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: Padding(
-        padding: EdgeInsets.only(
+        padding: const EdgeInsets.only(
           left: 25.0,
           right: 25.0,
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            SliderImage(imageUrl: 'assets/AppImags/appLogo.png'),
-            SizedBox(
+            const SliderImage(imageUrl: 'assets/AppImags/appLogo.png'),
+            const SizedBox(
               height: 30.0,
             ),
-            CustomSliderScreenTitleText(text: 'Welcome Back!'),
-            SizedBox(
+            const CustomSliderScreenTitleText(text: 'Welcome Back!'),
+            const SizedBox(
               height: 10.0,
             ),
-            Column(
+            const Column(
               children: [
                 SmallText(
                   text: 'Ready to shart shopping Sign Up',
@@ -39,18 +40,19 @@ class WelcomeScreen extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 140.0,
             ),
-            CustomAppButton(
+            const CustomAppButton(
               buttonText: 'Sign Up',
             ),
-            SizedBox(
+            const SizedBox(
               height: 10.0,
             ),
             CustomIsHasAccount(
               text1: 'Already have an account? ',
               text2: 'Login',
+              screenName: LoginScreen.id,
             )
           ],
         ),
