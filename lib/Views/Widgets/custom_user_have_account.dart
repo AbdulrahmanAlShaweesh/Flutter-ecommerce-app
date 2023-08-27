@@ -7,12 +7,12 @@ class CustomIsHasAccount extends StatelessWidget {
     super.key,
     required this.text1,
     required this.text2,
-    required this.screenName,
+    required this.onTap,
   });
 
   final String text1;
   final String text2;
-  final String screenName;
+  final VoidCallback onTap;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -20,9 +20,7 @@ class CustomIsHasAccount extends StatelessWidget {
       children: [
         SmallText(text: text1, fontSize: 16.0),
         GestureDetector(
-          onTap: () {
-            Navigator.pushReplacementNamed(context, screenName);
-          },
+          onTap: onTap,
           child: SmallText(
             text: text2,
             fontSize: 18.0,

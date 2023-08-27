@@ -8,6 +8,7 @@ class CustomAppButton extends StatelessWidget {
     required this.buttonText,
   });
   final String buttonText;
+
   @override
   Widget build(BuildContext context) {
     return Container(

@@ -3,8 +3,9 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_ecommerce_app/Views/Screens/intro_slider_screen.dart';
 import 'package:flutter_ecommerce_app/Views/Screens/login_screen.dart';
-import 'package:flutter_ecommerce_app/Views/Screens/signuo_screen.dart';
+import 'package:flutter_ecommerce_app/Views/Screens/signup_screen.dart';
 import 'package:flutter_ecommerce_app/Views/Screens/welcome_screen.dart';
+import 'package:flutter_ecommerce_app/constant/app_colors.dart';
 
 import 'firebase_options.dart';
 
@@ -26,6 +27,12 @@ class EcommerceApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(
         brightness: Brightness.dark,
+        iconTheme: IconThemeData(
+          color: AppColors.iconColor,
+        ),
+        buttonTheme: ButtonThemeData(
+          buttonColor: AppColors.buttonColors,
+        ),
       ),
       debugShowCheckedModeBanner: false,
       routes: {

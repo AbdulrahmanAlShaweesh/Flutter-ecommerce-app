@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_ecommerce_app/Views/Screens/signuo_screen.dart';
+import 'package:flutter_ecommerce_app/Views/Screens/signup_screen.dart';
 import 'package:flutter_ecommerce_app/Views/Widgets/custom_app_button.dart';
 import 'package:flutter_ecommerce_app/Views/Widgets/custom_auth_accounts.dart';
 import 'package:flutter_ecommerce_app/Views/Widgets/custom_forgot_password_text.dart';
@@ -30,10 +30,10 @@ class LoginScreenView extends StatelessWidget {
           icons: Icons.email,
         ),
         const SizedBox(
-          height: 20.0,
+          height: 30.0,
         ),
         const CustomTextFormField(
-          hintText: 'Enter your emial',
+          hintText: 'Enter your password',
           icons: Icons.lock,
         ),
         const SizedBox(
@@ -61,7 +61,10 @@ class LoginScreenView extends StatelessWidget {
         CustomIsHasAccount(
           text1: 'Don\'t have an account? ',
           text2: 'Create',
-          screenName: SignUpScreen.id,
+          onTap: () {
+            // Navigator.pushReplacementNamed(context, SignUpScreen.id)),
+            Navigator.pushReplacementNamed(context, SignUpScreen.id);
+          },
         )
       ],
     );
