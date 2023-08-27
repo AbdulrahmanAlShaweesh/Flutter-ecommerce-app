@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_ecommerce_app/Cubits/cubit/hiden_or_show_password_cubit.dart';
+import 'package:flutter_ecommerce_app/Cubits/hidden_password/hiden_or_show_password_cubit.dart';
 import 'package:flutter_ecommerce_app/Views/Screens/login_screen.dart';
 import 'package:flutter_ecommerce_app/Views/Widgets/custom_app_button.dart';
 import 'package:flutter_ecommerce_app/Views/Widgets/custom_slider_screens_title.dart';
