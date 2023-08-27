@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, unused_import
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_ecommerce_app/Views/Screens/botton_nav_bar.dart';
 import 'package:flutter_ecommerce_app/Views/Screens/intro_slider_screen.dart';
 import 'package:flutter_ecommerce_app/Views/Screens/login_screen.dart';
 import 'package:flutter_ecommerce_app/Views/Screens/signup_screen.dart';
@@ -40,6 +41,7 @@ class EcommerceApp extends StatelessWidget {
         WelcomeScreen.id: (context) => WelcomeScreen(),
         LoginScreen.id: (context) => LoginScreen(),
         SignUpScreen.id: (context) => SignUpScreen(),
+        BottonNavBar.id: (context) => BottonNavBar()
       },
       initialRoute: IntroSliderScreen.id,
     );

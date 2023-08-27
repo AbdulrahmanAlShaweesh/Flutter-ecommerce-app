@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_ecommerce_app/Cubits/hidden_password/hiden_or_show_password_cubit.dart';
+import 'package:flutter_ecommerce_app/Views/Screens/botton_nav_bar.dart';
 import 'package:flutter_ecommerce_app/Views/widgets/singup_screen_view.dart';
 
 class SignUpScreen extends StatelessWidget {
@@ -19,7 +20,12 @@ class SignUpScreen extends StatelessWidget {
           ),
           child: BlocProvider(
             create: (context) => HidenOrShowPasswordCubit(),
-            child: const SignUpScreenView(),
+            child: GestureDetector(
+              onTap: () {
+                Navigator.pushNamed(context, BottonNavBar.id);
+              },
+              child: const SignUpScreenView(),
+            ),
           ),
         ),
       ),
