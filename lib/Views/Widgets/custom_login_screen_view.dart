@@ -1,4 +1,8 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_ecommerce_app/Cubits/cubit/hiden_or_show_password_cubit.dart';
 import 'package:flutter_ecommerce_app/Views/Screens/signup_screen.dart';
 import 'package:flutter_ecommerce_app/Views/Widgets/custom_app_button.dart';
 import 'package:flutter_ecommerce_app/Views/Widgets/custom_auth_accounts.dart';
@@ -32,9 +36,24 @@ class LoginScreenView extends StatelessWidget {
         const SizedBox(
           height: 30.0,
         ),
-        const CustomTextFormField(
-          hintText: 'Enter your password',
-          icons: Icons.lock,
+        BlocBuilder<HidenOrShowPasswordCubit, HidenOrShowPasswordState>(
+          builder: (context, state) {
+            var isShowPassword =
+                BlocProvider.of<HidenOrShowPasswordCubit>(context);
+
+            return CustomTextFormField(
+              obscureText:
+                  isShowPassword.showLoginScreenPassword ? false : true,
+              hintText: 'Enter your password',
+              icons: Icons.lock,
+              onTap: () {
+                isShowPassword.isShowBassword(screenName: 'login');
+              },
+              icon: isShowPassword.showLoginScreenPassword
+                  ? Icons.visibility
+                  : Icons.visibility_off,
+            );
+          },
         ),
         const SizedBox(
           height: 5.0,

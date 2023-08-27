@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_ecommerce_app/Cubits/cubit/hiden_or_show_password_cubit.dart';
 import 'package:flutter_ecommerce_app/Views/Screens/login_screen.dart';
 import 'package:flutter_ecommerce_app/Views/Widgets/custom_app_button.dart';
 import 'package:flutter_ecommerce_app/Views/Widgets/custom_slider_screens_title.dart';
@@ -36,16 +38,43 @@ class SignUpScreenView extends StatelessWidget {
         const SizedBox(
           height: 25.0,
         ),
-        const CustomTextFormField(
-          hintText: 'password',
-          icons: Icons.lock,
+        BlocBuilder<HidenOrShowPasswordCubit, HidenOrShowPasswordState>(
+          builder: (context, state) {
+            var isShowPassword =
+                BlocProvider.of<HidenOrShowPasswordCubit>(context);
+            return CustomTextFormField(
+              hintText: 'password',
+              icons: Icons.lock,
+              onTap: () {
+                isShowPassword.isShowBassword(screenName: 'signup');
+              },
+              icon: isShowPassword.showSignUpScreenPassword
+                  ? Icons.visibility
+                  : Icons.visibility_off,
+              obscureText:
+                  isShowPassword.showSignUpScreenPassword ? false : true,
+            );
+          },
         ),
         const SizedBox(
           height: 25.0,
         ),
-        const CustomTextFormField(
-          hintText: 'confirm password',
-          icons: Icons.lock,
+        BlocBuilder<HidenOrShowPasswordCubit, HidenOrShowPasswordState>(
+          builder: (context, state) {
+            var isShowBassword =
+                BlocProvider.of<HidenOrShowPasswordCubit>(context);
+            return CustomTextFormField(
+              hintText: 'confirm password',
+              icons: Icons.lock,
+              onTap: () {
+                isShowBassword.isShowBassword(screenName: 'confirm');
+              },
+              icon: isShowBassword.showconfirmPassword
+                  ? Icons.visibility
+                  : Icons.visibility_off,
+              obscureText: isShowBassword.showconfirmPassword ? false : true,
+            );
+          },
         ),
         const SizedBox(
           height: 12.0,

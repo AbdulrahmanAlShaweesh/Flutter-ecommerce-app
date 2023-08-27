@@ -5,20 +5,33 @@ class CustomTextFormField extends StatelessWidget {
     super.key,
     required this.hintText,
     required this.icons,
+    this.onTap,
+    this.icon,
+    this.obscureText = false,
   });
 
   final String hintText;
   final IconData icons;
+  final VoidCallback? onTap;
+  final IconData? icon;
+  final bool obscureText;
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      style: TextStyle(color: Colors.black),
+      obscureText: obscureText,
       decoration: InputDecoration(
+        suffixIcon: GestureDetector(
+          onTap: onTap,
+          child: Icon(
+            icon,
+            color: Colors.black.withOpacity(0.5),
+          ),
+        ),
         prefixIcon: IconButton(
           onPressed: () {},
-          icon: Icon(
-            icons,
-            color: Colors.black,
-          ),
+          icon: Icon(icons),
+          color: Colors.black.withOpacity(0.5),
         ),
         hintText: hintText,
         hintStyle: TextStyle(
