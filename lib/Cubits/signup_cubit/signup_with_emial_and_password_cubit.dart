@@ -13,13 +13,14 @@ class SignupWithEmialAndPasswordCubit
 
   Future<void> addNewUser(
       {required String email, required String password}) async {
-    await FirebaseAuth.instance.createUserWithEmailAndPassword(
-      email: email,
-      password: password,
-    );
     isLoading = true;
     emit(SignupLoadingState());
     try {
+      await FirebaseAuth.instance.createUserWithEmailAndPassword(
+        email: email,
+        password: password,
+      );
+      emit(SignupSuccessState());
       isLoading = false;
     } on FirebaseAuthException catch (errorMessage) {
       emit(
@@ -27,5 +28,6 @@ class SignupWithEmialAndPasswordCubit
       );
       isLoading = false;
     }
+    isLoading = false;
   }
 }

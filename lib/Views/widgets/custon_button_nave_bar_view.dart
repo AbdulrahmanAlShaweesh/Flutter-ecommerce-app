@@ -22,12 +22,11 @@ class ButtonNavBarVeiw extends StatelessWidget {
       selectedItemColor: Colors.white,
       onTap: (selectedIndex) {
         index.changeNavBarIcon(selectedIndex: selectedIndex);
-        print(index.currentIndex);
       },
       items: [
         BottomNavigationBarItem(
           icon: Padding(
-            padding: const EdgeInsets.only(bottom: 5.0),
+            padding: const EdgeInsets.only(bottom: 5.0, top: 10.0),
             child: SvgPicture.asset(
               'assets/navigationbaricons/home.svg',
               color: index.currentIndex == 0
@@ -40,7 +39,7 @@ class ButtonNavBarVeiw extends StatelessWidget {
         ),
         BottomNavigationBarItem(
           icon: Padding(
-            padding: const EdgeInsets.only(bottom: 5.0),
+            padding: const EdgeInsets.only(bottom: 5.0, top: 10),
             child: SvgPicture.asset(
               'assets/navigationbaricons/category.svg',
               color: index.currentIndex == 1
@@ -53,7 +52,7 @@ class ButtonNavBarVeiw extends StatelessWidget {
         ),
         BottomNavigationBarItem(
           icon: Padding(
-            padding: const EdgeInsets.only(bottom: 5.0),
+            padding: const EdgeInsets.only(bottom: 5.0, top: 10),
             child: SvgPicture.asset(
               'assets/navigationbaricons/chat.svg',
               color: index.currentIndex == 2
@@ -66,12 +65,14 @@ class ButtonNavBarVeiw extends StatelessWidget {
         ),
         BottomNavigationBarItem(
           icon: Padding(
-            padding: const EdgeInsets.only(bottom: 5.0),
+            padding: const EdgeInsets.only(bottom: 5.0, top: 10),
             child: SvgPicture.asset(
               'assets/navigationbaricons/shopping-cart.svg',
               color: index.currentIndex == 3
                   ? Colors.white
-                  : Colors.white.withOpacity(0.7),
+                  : Colors.white.withOpacity(
+                      0.7,
+                    ),
               height: 25,
             ),
           ),
@@ -79,7 +80,7 @@ class ButtonNavBarVeiw extends StatelessWidget {
         ),
         BottomNavigationBarItem(
           icon: Padding(
-            padding: const EdgeInsets.only(bottom: 5.0),
+            padding: const EdgeInsets.only(bottom: 5.0, top: 10),
             child: SvgPicture.asset(
               'assets/navigationbaricons/person.svg',
               color: index.currentIndex == 4
