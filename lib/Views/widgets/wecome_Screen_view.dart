@@ -40,13 +40,11 @@ class WelcomeScreenView extends StatelessWidget {
         const SizedBox(
           height: 140.0,
         ),
-        GestureDetector(
+        CustomAppButton(
+          buttonText: 'Sign Up',
           onTap: () {
             Navigator.pushReplacementNamed(context, SignUpScreen.id);
           },
-          child: const CustomAppButton(
-            buttonText: 'Sign Up',
-          ),
         ),
         const SizedBox(
           height: 10.0,

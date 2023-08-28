@@ -9,10 +9,15 @@ import 'package:flutter_ecommerce_app/Views/Widgets/custom_user_have_account.dar
 import 'package:flutter_ecommerce_app/Views/widgets/custom_term_of_use.dart';
 
 class SignUpScreenView extends StatelessWidget {
-  const SignUpScreenView({
+  SignUpScreenView({
     super.key,
   });
 
+  final TextEditingController userNameController = TextEditingController();
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
+  final TextEditingController conirmPasswordController =
+      TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -24,14 +29,16 @@ class SignUpScreenView extends StatelessWidget {
         const SizedBox(
           height: 70.0,
         ),
-        const CustomTextFormField(
+        CustomTextFormField(
+          controller: userNameController,
           hintText: 'Full name',
           icons: Icons.person_outline,
         ),
         const SizedBox(
           height: 25.0,
         ),
-        const CustomTextFormField(
+        CustomTextFormField(
+          controller: emailController,
           hintText: 'emial address',
           icons: Icons.email,
         ),
@@ -43,6 +50,7 @@ class SignUpScreenView extends StatelessWidget {
             var isShowPassword =
                 BlocProvider.of<HidenOrShowPasswordCubit>(context);
             return CustomTextFormField(
+              controller: passwordController,
               hintText: 'password',
               icons: Icons.lock,
               onTap: () {
@@ -64,6 +72,7 @@ class SignUpScreenView extends StatelessWidget {
             var isShowBassword =
                 BlocProvider.of<HidenOrShowPasswordCubit>(context);
             return CustomTextFormField(
+              controller: conirmPasswordController,
               hintText: 'confirm password',
               icons: Icons.lock,
               onTap: () {
@@ -83,7 +92,10 @@ class SignUpScreenView extends StatelessWidget {
         const SizedBox(
           height: 40.0,
         ),
-        const CustomAppButton(buttonText: 'Sign Up'),
+        CustomAppButton(
+          buttonText: 'Sign Up',
+          onTap: () {},
+        ),
         const SizedBox(
           height: 30.0,
         ),

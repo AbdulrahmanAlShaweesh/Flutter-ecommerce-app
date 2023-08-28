@@ -22,9 +22,9 @@ class SignUpScreen extends StatelessWidget {
             create: (context) => HidenOrShowPasswordCubit(),
             child: GestureDetector(
               onTap: () {
-                Navigator.pushNamed(context, BottonNavBar.id);
+                Navigator.pop(context);
               },
-              child: const SignUpScreenView(),
+              child: SignUpScreenView(),
             ),
           ),
         ),
