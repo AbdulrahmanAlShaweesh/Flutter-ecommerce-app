@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_ecommerce_app/Views/Screens/botton_nav_bar.dart';
+import 'package:flutter_ecommerce_app/Views/Screens/button_nav_bar.dart';
+import 'package:flutter_ecommerce_app/Views/Screens/home_Screen.dart';
 import 'package:flutter_ecommerce_app/Views/Screens/intro_slider_screen.dart';
 import 'package:flutter_ecommerce_app/Views/Screens/login_screen.dart';
 import 'package:flutter_ecommerce_app/Views/Screens/signup_screen.dart';
@@ -27,6 +28,7 @@ class EcommerceApp extends StatelessWidget {
         WelcomeScreen.id: (context) => const WelcomeScreen(),
         LoginScreen.id: (context) => const LoginScreen(),
         SignUpScreen.id: (context) => const SignUpScreen(),
+        HomeScreen.id: (context) => const HomeScreen(),
         BottonNavBar.id: (context) => const BottonNavBar()
       },
       initialRoute: IntroSliderScreen.id,

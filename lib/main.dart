@@ -4,8 +4,8 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_ecommerce_app/Cubits/login_cubit/login_emial_password_auth_cubit.dart';
+import 'package:flutter_ecommerce_app/Cubits/nav_bar/navigation_bar_cubit_cubit.dart';
 import 'package:flutter_ecommerce_app/Cubits/signup_cubit/signup_with_emial_and_password_cubit.dart';
-import 'package:flutter_ecommerce_app/Views/Screens/botton_nav_bar.dart';
 import 'package:flutter_ecommerce_app/Views/Screens/intro_slider_screen.dart';
 import 'package:flutter_ecommerce_app/Views/Screens/login_screen.dart';
 import 'package:flutter_ecommerce_app/Views/Screens/signup_screen.dart';
@@ -25,7 +25,8 @@ void main() async {
     MultiBlocProvider(
       providers: [
         BlocProvider(create: (context) => LoginEmialPasswordAuthCubit()),
-        BlocProvider(create: (context) => SignupWithEmialAndPasswordCubit())
+        BlocProvider(create: (context) => SignupWithEmialAndPasswordCubit()),
+        BlocProvider(create: (context) => NavigationBarCubitCubit())
       ],
       child: const EcommerceApp(),
     ),

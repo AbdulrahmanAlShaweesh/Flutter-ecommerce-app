@@ -11,7 +11,7 @@ class NavigationBarCubitCubit extends Cubit<NavigationBarCubitState> {
   changeNavBarIcon({required int selectedIndex}) {
     currentIndex = selectedIndex;
     emit(
-      ChangeNavIcon(),
+      ChangeNavIcon(index: currentIndex),
     );
   }
 }
